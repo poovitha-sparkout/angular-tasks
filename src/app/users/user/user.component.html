@@ -1,0 +1,37 @@
+<div *ngIf="user">
+    <div class="container mt-5 d-flex justify-content-center">
+      <div class="card p-3">
+        <div class="d-flex align-items-center">
+          <div class="image">
+            <img
+              src="{{user?.avatar}}"
+              class="rounded"
+              width="300"
+            />
+          </div>
+    
+          <div class="ml-3 w-100">
+            <h4 class="mb-0 mt-0">{{user.first_name}} {{user.last_name}}</h4>
+            <span>{{user?.occupation}}</span>
+    
+            <div
+              class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats"
+            >
+              <div class="d-flex flex-column">
+                <span class="articles">Id</span>
+                <span class="number1">{{user.id}}</span>
+                <span class="articles">Email</span>
+                <span class="number1">{{user.email}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!user">
+    <div colspan="5" class="loader-overlay">
+      <div class="dots-bars-1"></div>
+    </div>
+  </div>

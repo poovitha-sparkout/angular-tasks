@@ -1,0 +1,16 @@
+<h1 class="text-center">User Listing</h1>
+
+<div class="card-container">
+  <div class="row">
+    <div *ngFor="let user of users ; let i = index" class="col-md-4">
+      <div class="card">
+        <img [src]="user.avatar" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ user.first_name }}_{{ user.last_name }}</h5>
+          <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+          <a (click)="onViewUser(user.id)" class="btn btn-primary">View Users</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
